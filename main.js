@@ -1,6 +1,10 @@
 // Rock paper scissors choices array to choose from
 const choices = ['rock', 'paper', 'scissors']
 
+// Counter for scores
+let playerScore = 0;
+let computerScore = 0;
+
 // Function to get user input
 function getPlayerChoice() {
     // .toLowerCase() so any answer would be lowercase
@@ -14,10 +18,6 @@ function getComputerChoice() {
     // use Math.floor to round off to nearest lower integer
     return choices[Math.floor(Math.random()*choices.length)];
 }
-
-// Counter for scores
-let playerScore = 0;
-let computerScore = 0;
 
 // Function to determine the winner
 function playRound(playerSelection, computerSelection){
@@ -48,16 +48,12 @@ function playRound(playerSelection, computerSelection){
 
 // Function to play the game
 function game(){
-
-    // for loop to play the game 5 times
-    // i = 0 means loop starts at 0
-    for (let i = 0; i < 5; i++){
-        // actual game algorithm
-        const playerSelection = getPlayerChoice();
-        const computerSelection = getComputerChoice();
-        console.log(playRound(playerSelection, computerSelection));
-        console.log('Player = ' + playerScore + ' : ' + 'Computer = ' + computerScore);
-    }
+    
+    // actual game algorithm
+    const playerSelection = getPlayerChoice();
+    const computerSelection = getComputerChoice();
+    console.log(playRound(playerSelection, computerSelection));
+    console.log('Player = ' + playerScore + ' : ' + 'Computer = ' + computerScore);
 
     // Determine winner
     if (playerScore == computerScore){
@@ -72,3 +68,4 @@ function game(){
     playerScore = 0;
     computerScore = 0;
 }
+
