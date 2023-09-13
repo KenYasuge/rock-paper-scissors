@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.game{
+    padding-top: 100px;
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: space-between;
+    gap: 50px;
+}
+
+.score-board{
+    display: flex;    
+    justify-content: space-between;
+}
+.score-board p{
+    font-size: 18px;
+}
+
+.choices-container{
+    display: flex;
+    justify-content: space-between;
+}
+.btn-img{
+    width: 5em;
+    height: auto;
+}
+
+.reset{
+    padding: 10px;
+    width: 150px;
+    align-self: center;
+}

@@ -44,11 +44,16 @@ function playRound(playerSelection, computerSelection){
         console.log('You Lose! Rock beats Scissors');
         computerScore++
     }
+
+    // show scores on the board
+    playerScoreText.textContent = 'Player: ' + playerScore;
+    compScoreText.textContent = 'Computer: ' + computerScore;
+
 }
 
 // Function to play the game
 function game(){
-    
+
     // actual game algorithm
     const playerSelection = getPlayerChoice();
     const computerSelection = getComputerChoice();
@@ -69,3 +74,21 @@ function game(){
     computerScore = 0;
 }
 
+// on click, player choice = rock
+const rockBtn = document.querySelector('.rock');
+rockBtn.addEventListener('click', function(){
+    playRound('rock',getComputerChoice())
+})
+// on click, player choice = paper
+const paperBtn = document.querySelector('.paper');
+paperBtn.addEventListener('click', function(){
+    playRound('paper',getComputerChoice())
+})
+// on click, player choice = scissors
+const scissorsBtn = document.querySelector('.scissors');
+scissorsBtn.addEventListener('click', function(){
+    playRound('scissors',getComputerChoice())
+})
+
+const playerScoreText = document.querySelector('.player-score')
+const compScoreText = document.querySelector('.comp-score')

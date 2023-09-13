@@ -4,11 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rock Paper Scissors</title>
-    <script src="main.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="main.js" defer></script>
 </head>
 <body>
-    <button class="rock btn"><img src="images/rock.png" alt="a fist"></button>
-    <button class="paper btn"><img src="images/paper.png" alt="a hand"></button>
-    <button class="Scissors btn"><img src="images/scissors.png" alt="a hand scissors"></button>
+    <div class="game">
+        <div class="score-board">
+            <p class="player-score"></p>
+            <p class="comp-score"></p>
+        </div>
+        <div class="choices-container">
+            <button class="rock btn">
+                <img src="images/rock.png" alt="a fist" class="btn-img">
+            </button>
+            <button class="paper btn">
+                <img src="images/paper.png" alt="a hand" class="btn-img">
+            </button>
+            <button class="scissors btn">
+                <img src="images/scissors.png" alt="a hand scissors" class="btn-img">
+            </button>
+        </div>
+        <button class="reset">New Game</button>
+    </div>
+
 </body>
 </html>
