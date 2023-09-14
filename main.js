@@ -46,8 +46,8 @@ function playRound(playerSelection, computerSelection){
     }
 
     // show scores on the board
-    playerScoreText.textContent = 'Player: ' + playerScore;
-    compScoreText.textContent = 'Computer: ' + computerScore;
+    playerScoreText.textContent = playerScore;
+    compScoreText.textContent = computerScore;
 
 }
 

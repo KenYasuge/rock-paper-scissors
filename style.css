@@ -7,29 +7,56 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
+    background-color: #634EB1;
 }
 
 .game{
-    padding-top: 100px;
-    width: 100%;
-    max-width: 500px;
     display: flex;
     flex-direction: column;
     align-items: space-between;
+    justify-content: center;
+    background-color: #ffffff;
+    margin-top: 48px;
+    width: 75%;
+    max-width: 500px;
+    padding: 32px;
     gap: 50px;
+    border-radius: 3%;
+}
+
+.fight{
+    display: flex;
+    justify-content: space-evenly;
+}
+.fight-box{
+    height: 7em;
+    width: 7em;
+    border: 1px solid red;
+}
+.versus{
+    font-size: 32px;
 }
 
 .score-board{
-    display: flex;    
+    display: flex;
     justify-content: space-between;
 }
 .score-board p{
-    font-size: 18px;
+    font-size: 14px;
 }
 
 .choices-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 18px;
+}
+.btn{
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow:  15px 15px 30px #d9d9d9,
+                 -15px -15px 30px #ffffff;
 }
 .btn-img{
     width: 5em;
