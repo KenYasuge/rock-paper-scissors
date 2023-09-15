@@ -36,6 +36,7 @@ body{
     overflow: hidden;
 }
 
+/* Score board with names of players */
 .score-board{
     text-align: center;
     gap: 12px;
@@ -48,28 +49,13 @@ body{
     width: 60px;
 }
 .score-number-container{
-    margin: 0 8px;
+    margin: 0 10px;
 }
 .score-numbers{
-    font-size: 42px;
+    font-size: 48px;
 }
 
-.fight{
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-}
-.fight-box{
-    height: 6em;
-    width: 6em;
-}
-.fight-box img{
-    width: 100%;
-}
-.versus{
-    font-size: 32px;
-}
-
+/* Announces the win/lose */
 .announcement{
     text-align: center;
     font-size: 20px;
@@ -82,11 +68,32 @@ body{
     padding: 10px 0;
     border-radius: 6px;
 }
+
+/* Shows the chosen option of both players */
+.fight{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.fight-box{
+    height: 6em;
+    width: 6em;
+    border: none;
+}
+.fight-box img{
+    width: 100%;
+}
+.versus{
+    font-size: 32px;
+}
+
+/* Shows the win condition of the current round */
 .round-details{
     text-align: center;
     height: 12px;
 }
 
+/* This is where players choose rock, paper, or scissors  */
 .choices-container{
     display: flex;
     justify-content: center;
@@ -124,6 +131,7 @@ body{
     overflow: hidden;
 }
 
+/* This resets the game */
 .reset{
     background-color: #b1a0f0;
     padding: 10px;
@@ -137,7 +145,55 @@ body{
     box-shadow: .2rem .2rem #05060f;
     overflow: hidden;
     color: black;
+    cursor: pointer;
 }
 .reset:hover{
+    transform: translateY(-5px);
+}
+
+/* This is a modal that shows when the game ends  */
+.modal{
+    display: none;
+    position: fixed; /* stays in place */
+    z-index: 1; /* sits on top of everything */
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    overflow: auto;
+    background-color: rgba(0, 0,  0, 0.7);
+}
+.modal-content{
+    background-color: #ffffff;
+    width: 180px;
+    text-align: center;
+    border-radius: 10px;
+    padding: 30px;
+    overflow: hidden;
+    margin: 20% auto;
+    border: 3px solid #05060f;
+    box-shadow: .2rem .2rem #05060f;
+}
+.winner-text{
+    display: block;
+    font-size: 38px;
+    padding-bottom: 24px;
+}
+.reset2{
+    background-color: #b1a0f0;
+    padding: 10px;
+    width: 100px;
+    height: 50px;
+    align-self: center;
+    border-radius: 10px;
+    border: none;
+    border-radius: 1rem;
+    border: 3px solid #05060f;
+    box-shadow: .2rem .2rem #05060f;
+    overflow: hidden;
+    color: black;  
+    cursor: pointer;  
+}
+.reset2:hover{
     transform: translateY(-5px);
 }

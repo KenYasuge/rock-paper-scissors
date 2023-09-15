@@ -5,11 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ken's Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
-    <script src="main.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <span class="game-title">Ken's <br> Rock-Paper-Scissors</span>
+
     <div class="game">
+
+        <!-- Score board with names of players -->
         <div class="score-board">
             <span class="player-name score-names">Player</span>
             <span class="score-number-container">
@@ -20,10 +23,12 @@
             <span class="comp-name score-names">Computer</span>
         </div>
 
+        <!-- Announces the win/lose -->
         <div class="announcement">
             <span class="announcement-text"></span>
         </div>
 
+        <!-- Shows the chosen option of both players -->
         <div class="fight">
             <div class="fight-box">
                 <img class="player-choice">
@@ -34,9 +39,12 @@
             </div>
         </div>
 
+        <!-- Shows the win condition of the current round -->
         <div class="round-details">
             <span class="round-details-text"></span>
         </div>
+
+        <!-- This is where players choose rock, paper, or scissors -->
         <div class="choices-container">
             <button class="rock btn">
                 <img src="images/rock.png" alt="a fist" class="btn-img">
@@ -48,9 +56,21 @@
                 <img src="images/scissors.png" alt="a hand scissors" class="btn-img">
             </button>
         </div>
+
+        <!-- This resets the game -->
         <button class="reset">
             <span>New Game</span>
         </button>
+    </div>
+
+    <!-- This is a modal that shows when the game ends -->
+    <div class="modal">
+        <div class="modal-content">
+            <span class="winner-text"></span>
+            <button class="reset2">
+                <span>Play Again</span>
+            </button>                
+        </div>
     </div>
 
 </body>

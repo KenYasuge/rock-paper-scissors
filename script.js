@@ -5,17 +5,24 @@ const choices = ['rock', 'paper', 'scissors']
 let playerScore = 0;
 let computerScore = 0;
 
-// get score selectors
+// Get score selectors
 const playerScoreText = document.querySelector('.player-score');
 const compScoreText = document.querySelector('.comp-score');
 
-// get player choice image & comp choice image
+// Get player choice image & comp choice image
 const playerImg = document.querySelector('.player-choice');
 const compImg = document.querySelector('.comp-choice');
 
-// get announcements
+// Get announcements
 const annText = document.querySelector('.announcement-text');
 const roundText = document.querySelector('.round-details-text');
+
+// Get modal
+const modal = document.querySelector('.modal');
+const modalBox = document.querySelector('.modal-content');
+
+// Get text for winner in modal
+const modalText = document.querySelector('.winner-text');
 
 // Function for computer to get random choice from choices
 function getComputerChoice() {
@@ -25,6 +32,49 @@ function getComputerChoice() {
     return choices[Math.floor(Math.random()*choices.length)];
 }
 
+// on click, player choice = rock
+const rockBtn = document.querySelector('.rock');
+rockBtn.addEventListener('click', function(){
+    // show image of choice
+    playerImg.src = 'images/rock.png';
+
+    // play game
+    playRound('rock',getComputerChoice())
+});
+// on click, player choice = paper
+const paperBtn = document.querySelector('.paper');
+paperBtn.addEventListener('click', function(){
+    playerImg.src = 'images/paper.png';
+    playRound('paper',getComputerChoice())
+});
+// on click, player choice = scissors
+const scissorsBtn = document.querySelector('.scissors');
+scissorsBtn.addEventListener('click', function(){
+    playerImg.src = 'images/scissors.png';
+    playRound('scissors',getComputerChoice())
+});
+
+// Reset buttons
+const resetBtn = document.querySelector('.reset');
+const resetBtn2 = document.querySelector('.reset2');
+resetBtn.addEventListener('click', resetGame);
+resetBtn2.addEventListener('click', resetGame);
+
+// Reset function
+function resetGame (){
+    // Reset scores for next game
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreText.textContent = playerScore;
+    compScoreText.textContent = computerScore;
+    playerImg.src = '';
+    compImg.src = '';
+    annText.textContent = '';
+    annText.style.cssText = 'background-color: #FFFFFF;'
+    roundText.textContent = '';
+    modal.style.display = 'none';
+}
+
 // Function to determine the winner
 function playRound(playerSelection, computerSelection){
     // Rock paper scissors algorithm + update counter when winning
@@ -32,7 +82,7 @@ function playRound(playerSelection, computerSelection){
         console.log('Draw');
         annText.textContent = ('Draw');
         annText.style.cssText = "background-color: #ADC4CE; color: black;";
-        roundText.textContent = ('');
+        roundText.textContent = ("It's a draw");
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
         console.log('You Lose! Paper beats Rock');
         annText.textContent = ('You Lose');
@@ -71,7 +121,7 @@ function playRound(playerSelection, computerSelection){
         computerScore++
     }
 
-    // show computer selection image
+    // Show computer selection image
     if (computerSelection == 'rock'){
         compImg.src = 'images/rock.png'
     } else if (computerSelection == 'paper'){
@@ -80,52 +130,26 @@ function playRound(playerSelection, computerSelection){
         compImg.src = 'images/scissors.png'
     }
 
-    // show scores on the board
+    // Show scores on the board
     playerScoreText.textContent = playerScore;
     compScoreText.textContent = computerScore;
 
     
-    // return winner if one player scores 5
-    // if (playerScore == 5){
-    //     alert('You Win!');
-    // } else if (computerScore == 5){
-    //     alert('You Lost');
-    // }
+    // Return winner if one player scores 5
+    if (playerScore == 5){
+        modal.style.display ='block';
+        modalText.textContent = 'You Won!';
+    } else if (computerScore == 5){
+        modal.style.display ='block';
+        modalText.textContent = 'You Lost!';
+    }
+
+    // Reset game when clicking outside the modal
+    window.onclick = function(event){
+        if (event.target == modal){
+            modal.style.display = 'none';
+            resetGame();
+        }
+    }
 }
 
-// on click, player choice = rock
-const rockBtn = document.querySelector('.rock');
-rockBtn.addEventListener('click', function(){
-    // show image of choice
-    playerImg.src = 'images/rock.png';
-
-    // play game
-    playRound('rock',getComputerChoice())
-});
-// on click, player choice = paper
-const paperBtn = document.querySelector('.paper');
-paperBtn.addEventListener('click', function(){
-    playerImg.src = 'images/paper.png';
-    playRound('paper',getComputerChoice())
-});
-// on click, player choice = scissors
-const scissorsBtn = document.querySelector('.scissors');
-scissorsBtn.addEventListener('click', function(){
-    playerImg.src = 'images/scissors.png';
-    playRound('scissors',getComputerChoice())
-});
-
-// reset button
-const resetBtn = document.querySelector('.reset');
-resetBtn.addEventListener('click', () => {
-    // Reset scores for next game
-    playerScore = 0;
-    computerScore = 0;
-    playerScoreText.textContent = playerScore;
-    compScoreText.textContent = computerScore;
-    playerImg.src = '';
-    compImg.src = '';
-    annText.textContent = '';
-    annText.style.cssText = 'background-color: #FFFFFF;'
-    roundText.textContent = '';
-});
