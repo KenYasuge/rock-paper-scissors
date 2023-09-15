@@ -86,11 +86,11 @@ function playRound(playerSelection, computerSelection){
 
     
     // return winner if one player scores 5
-    if (playerScore == 5){
-        alert('You Win!');
-    } else if (computerScore == 5){
-        alert('You Lost');
-    }
+    // if (playerScore == 5){
+    //     alert('You Win!');
+    // } else if (computerScore == 5){
+    //     alert('You Lost');
+    // }
 }
 
 // on click, player choice = rock
