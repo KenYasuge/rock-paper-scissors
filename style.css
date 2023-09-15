@@ -50,7 +50,9 @@ body{
 .fight-box{
     height: 7em;
     width: 7em;
-    border: 1px solid red;
+}
+.fight-box img{
+    width: 100%;
 }
 .versus{
     font-size: 32px;
