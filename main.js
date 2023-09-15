@@ -13,6 +13,10 @@ const compScoreText = document.querySelector('.comp-score');
 const playerImg = document.querySelector('.player-choice');
 const compImg = document.querySelector('.comp-choice');
 
+// get announcements
+const annText = document.querySelector('.announcement-text');
+const roundText = document.querySelector('.round-details-text');
+
 // Function for computer to get random choice from choices
 function getComputerChoice() {
     // choices.length to get length of array
@@ -23,27 +27,47 @@ function getComputerChoice() {
 
 // Function to determine the winner
 function playRound(playerSelection, computerSelection){
-
     // Rock paper scissors algorithm + update counter when winning
     if (playerSelection === computerSelection){
         console.log('Draw');
+        annText.textContent = ('Draw');
+        annText.style.cssText = "background-color: #ADC4CE; color: black;";
+        roundText.textContent = ('');
     } else if (playerSelection == 'rock' && computerSelection == 'paper'){
         console.log('You Lose! Paper beats Rock');
+        annText.textContent = ('You Lose');
+        annText.style.cssText = "background-color: #EF665B; color: white;";
+        roundText.textContent = ('Paper beats Rock');
         computerScore++
     } else if (playerSelection == 'rock' && computerSelection == 'scissors'){
         console.log('You Win! Rock beats Scissors');
+        annText.textContent = ('You Win');
+        annText.style.cssText = "background-color: #9ED2BE; color: white;";
+        roundText.textContent = ('Rock beats Scissors');
         playerScore++
     } else if (playerSelection == 'paper' && computerSelection == 'rock'){
         console.log('You Win! Paper beats Rock');
+        annText.textContent = ('You Win');
+        annText.style.cssText = "background-color: #9ED2BE; color: white;";
+        roundText.textContent = ('Paper beats Rock');
         playerScore++
     } else if (playerSelection == 'paper' && computerSelection == 'scissors'){
         console.log('You Lose! Scissors beats Paper');
+        annText.textContent = ('You Lose');
+        annText.style.cssText = "background-color: #EF665B; color: white;";
+        roundText.textContent = ('Scissors beats Paper');
         computerScore++
     } else if (playerSelection == 'scissors' && computerSelection == 'paper'){
         console.log('You Win! Scissors beats Paper');
+        annText.textContent = ('You Win');
+        annText.style.cssText = "background-color: #9ED2BE; color: white;";
+        roundText.textContent = ('Scissors beats Paper');
         playerScore++
     } else if (playerSelection == 'scissors' && computerSelection == 'rock'){
         console.log('You Lose! Rock beats Scissors');
+        annText.textContent = ('You Lose');
+        annText.style.cssText = "background-color: #EF665B; color: white;";
+        roundText.textContent = ('Rock beats Scissors');
         computerScore++
     }
 
@@ -60,6 +84,13 @@ function playRound(playerSelection, computerSelection){
     playerScoreText.textContent = playerScore;
     compScoreText.textContent = computerScore;
 
+    
+    // return winner if one player scores 5
+    if (playerScore == 5){
+        alert('You Win!');
+    } else if (computerScore == 5){
+        alert('You Lost');
+    }
 }
 
 // on click, player choice = rock
@@ -94,4 +125,7 @@ resetBtn.addEventListener('click', () => {
     compScoreText.textContent = computerScore;
     playerImg.src = '';
     compImg.src = '';
+    annText.textContent = '';
+    annText.style.cssText = 'background-color: #FFFFFF;'
+    roundText.textContent = '';
 });

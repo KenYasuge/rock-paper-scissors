@@ -3,19 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Chiken's Rock Paper Scissors</title>
+    <title>Ken's Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 <body>
+    <span class="game-title">Ken's <br> Rock-Paper-Scissors</span>
     <div class="game">
         <div class="score-board">
             <span class="player-name score-names">Player</span>
-            <span class="player-score score-numbers">0</span>
-            <span class="score-colon score-numbers">:</span>
-            <span class="comp-score score-numbers">0</span>
+            <span class="score-number-container">
+                <span class="player-score score-numbers">0</span>
+                <span class="score-colon score-numbers">:</span>
+                <span class="comp-score score-numbers">0</span>
+            </span>
             <span class="comp-name score-names">Computer</span>
         </div>
+
+        <div class="announcement">
+            <span class="announcement-text"></span>
+        </div>
+
         <div class="fight">
             <div class="fight-box">
                 <img class="player-choice">
@@ -24,6 +32,10 @@
             <div class="fight-box">
                 <img class="comp-choice">
             </div>
+        </div>
+
+        <div class="round-details">
+            <span class="round-details-text"></span>
         </div>
         <div class="choices-container">
             <button class="rock btn">
@@ -36,7 +48,9 @@
                 <img src="images/scissors.png" alt="a hand scissors" class="btn-img">
             </button>
         </div>
-        <button class="reset"><span class="button-top">Reset</span></button>
+        <button class="reset">
+            <span>New Game</span>
+        </button>
     </div>
 
 </body>
