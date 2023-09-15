@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rock Paper Scissors</title>
+    <title>Chiken's Rock Paper Scissors</title>
     <link rel="stylesheet" href="style.css">
     <script src="main.js" defer></script>
 </head>
 <body>
     <div class="game">
         <div class="score-board">
-            <p>Player:<span class="player-score"></span></p>
-            <p>Computer:<span class="comp-score"></span></p>
+            <span class="player-name score-names">Player</span>
+            <span class="player-score score-numbers">0</span>
+            <span class="score-colon score-numbers">:</span>
+            <span class="comp-score score-numbers">0</span>
+            <span class="comp-name score-names">Computer</span>
         </div>
         <div class="fight">
             <div class="player-choice fight-box"></div>
@@ -29,7 +32,7 @@
                 <img src="images/scissors.png" alt="a hand scissors" class="btn-img">
             </button>
         </div>
-        <button class="reset">New Game</button>
+        <button class="reset">Reset</button>
     </div>
 
 </body>

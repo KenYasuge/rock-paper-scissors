@@ -1,6 +1,7 @@
 *{
     padding: 0;
     margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 body{
@@ -24,6 +25,23 @@ body{
     border-radius: 3%;
 }
 
+.score-board{
+    width: 100%;
+    gap: 8px;
+    text-align: center;
+}
+.score-names{
+    font-size: 14px;
+    display: inline-block;
+}
+.comp-name{
+    width: 42px;
+}
+.score-numbers{
+    font-size: 42px;
+    font-weight: bolder;
+}
+
 .fight{
     display: flex;
     justify-content: space-evenly;
@@ -35,14 +53,6 @@ body{
 }
 .versus{
     font-size: 32px;
-}
-
-.score-board{
-    display: flex;
-    justify-content: space-between;
-}
-.score-board p{
-    font-size: 14px;
 }
 
 .choices-container{

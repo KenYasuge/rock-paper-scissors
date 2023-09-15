@@ -5,12 +5,6 @@ const choices = ['rock', 'paper', 'scissors']
 let playerScore = 0;
 let computerScore = 0;
 
-// Function to get user input
-function getPlayerChoice() {
-    // .toLowerCase() so any answer would be lowercase
-    return playerChoice = prompt('Choose: Rock, Paper, Scissors', '').toLowerCase();
-}
-
 // Function for computer to get random choice from choices
 function getComputerChoice() {
     // choices.length to get length of array
@@ -51,28 +45,9 @@ function playRound(playerSelection, computerSelection){
 
 }
 
-// Function to play the game
-function game(){
-
-    // actual game algorithm
-    const playerSelection = getPlayerChoice();
-    const computerSelection = getComputerChoice();
-    console.log(playRound(playerSelection, computerSelection));
-    console.log('Player = ' + playerScore + ' : ' + 'Computer = ' + computerScore);
-
-    // Determine winner
-    if (playerScore == computerScore){
-        alert("It's a Draw!");
-    } else if (playerScore > computerScore){
-        alert("You Win!")
-    } else {
-        alert("You Lose!")
-    }
-
-    // Reset scores for next game
-    playerScore = 0;
-    computerScore = 0;
-}
+// get score selectors
+const playerScoreText = document.querySelector('.player-score')
+const compScoreText = document.querySelector('.comp-score')
 
 // on click, player choice = rock
 const rockBtn = document.querySelector('.rock');
@@ -90,5 +65,12 @@ scissorsBtn.addEventListener('click', function(){
     playRound('scissors',getComputerChoice())
 })
 
-const playerScoreText = document.querySelector('.player-score')
-const compScoreText = document.querySelector('.comp-score')
+
+const resetBtn = document.querySelector('.reset')
+resetBtn.addEventListener('click', () => {
+    // Reset scores for next game
+    playerScore = 0;
+    computerScore = 0;
+    playerScoreText.textContent = playerScore;
+    compScoreText.textContent = computerScore;
+})
